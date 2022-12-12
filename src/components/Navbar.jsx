@@ -32,7 +32,7 @@ const Navbar = () => {
         </div>
        {user?.email ?( 
         <div className='flex flex-col md:flex-row'>
-            <Link to='/account' className=' px-4 text-sm md:p-4 font-bold capitalize'>{user?.email.substring(0, user?.email.indexOf('@'))}</Link>
+            <Link to='/account' className=' px-4 text-sm  md:text-base md:p-4 font-bold capitalize'>{user?.email.substring(0, user?.email.indexOf('@'))}</Link>
             <button onClick={handleSignout} className='w-full px-3 py-1 md:py-0 bg-button text-btnText shadow-xl rounded-2xl my-2'>Sign out</button>
         </div>
        ):(
