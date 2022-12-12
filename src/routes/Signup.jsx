@@ -26,7 +26,7 @@ const Signup = () => {
     <div>
       <div className='max-w-[400px] mx-auto min-h-[600px] px-4 py-28'>
         <h1 className='text-2xl font-bold'>Sign Up</h1>
-        {error? <p className='bg-red-300 p-3 my-2 '>error</p>:null}
+        {error? <p className='bg-red-400 p-3 my-2 rounded-xl '>Error signing up. Try again.</p>:null}
         <form onSubmit={handleSubmit}>
           <div className='my-4'>
             <label>Email</label>

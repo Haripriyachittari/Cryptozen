@@ -23,17 +23,17 @@ const Navbar = () => {
         setNav(!nav);
     }
   return (
-    <div className='rounded-div flex items-center justify-between h-20 font-bold'>
+    <div className='rounded-div flex items-center justify-between h-20 '>
         <Link to='/'>
-            <h1 className='text-2xl'>CryptoZen</h1>
+            <h1 className='text-2xl font-bold'>CryptoZen</h1>
         </Link>
         <div className='hidden md:block'>
             <Themetoggle/>
         </div>
        {user?.email ?( 
-        <div className='flex'>
-            <Link to='/account' className='p-4'>Account</Link>
-            <button onClick={handleSignout} className='w-full px-3 bg-button text-btnText shadow-xl rounded-2xl my-2'>Sign out</button>
+        <div className='flex flex-col md:flex-row'>
+            <Link to='/account' className=' px-4 text-sm md:p-4 font-bold capitalize'>{user?.email.substring(0, user?.email.indexOf('@'))}</Link>
+            <button onClick={handleSignout} className='w-full px-3 py-1 md:py-0 bg-button text-btnText shadow-xl rounded-2xl my-2'>Sign out</button>
         </div>
        ):(
          <div className='hidden md:block'>
