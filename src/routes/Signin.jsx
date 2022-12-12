@@ -2,14 +2,14 @@ import React ,{useState}from 'react'
 import { AiFillLock, AiOutlineMail } from 'react-icons/ai'
 import { Link } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
-import {signIn,UserAuth} from '../context/Authcontext'
+import {UserAuth} from '../context/Authcontext'
 
 const Signin = () => {
   const [email,setEmail]=useState('');
   const [password,setPassword]=useState('');
   const [error,setError]=useState('');
   const navigate=useNavigate();
-  const{signIn} = UserAuth();
+  const {signIn} = UserAuth();
 
   const handleSubmit= async(e)=>{
     e.preventDefault()
@@ -27,6 +27,7 @@ const Signin = () => {
     <div>
       <div className='max-w-[400px] mx-auto min-h-[600px] px-4 py-28'>
         <h1 className='text-2xl font-bold'>Sign In</h1>
+        {error? <p className='bg-red-300 p-3 my-2 '>error</p>:null}
         <form onSubmit={handleSubmit}>
           <div className='my-4'>
             <label>Email</label>
